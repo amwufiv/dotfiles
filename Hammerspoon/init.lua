@@ -1,10 +1,12 @@
 ---- Plugins
 hs.loadSpoon("DeepLTranslate")
 -- spoon.DeepLTranslate:start()
-spoon.DeepLTranslate:bindHotkeys({
-    translateSelectionPopup = { { "ctrl", "alt", "cmd" }, "E" },
- })
+-- spoon.DeepLTranslate:bindHotkeys({
+--     translateSelectionPopup = { { "ctrl", "alt", "cmd" }, "E" },
+--  })
 
+hs.loadSpoon("Caffeine")
+spoon.Caffeine:start()
 
  hs.loadSpoon("CountDown")
  hs.hotkey.bind({"cmd", "ctrl"}, "C", function()
@@ -18,17 +20,17 @@ spoon.DeepLTranslate:bindHotkeys({
         spoon.CountDown:pauseOrResume()
   end)
 
-  hs.loadSpoon("PopupTranslateSelection")
-  spoon.PopupTranslateSelection:bindHotkeys({
-    translate_en_zh = { { "ctrl", "cmd" }, "E" },
- })
+--   hs.loadSpoon("PopupTranslateSelection")
+--   spoon.PopupTranslateSelection:bindHotkeys({
+--     translate_en_zh = { { "ctrl", "cmd" }, "E" },
+--  })
 -- wifi
 wifiWatcher = nil
 homeSSID = {"retnuh_5G","retnuh"}
 lastSSID = hs.wifi.currentNetwork()
 
-wifiSetupPath = "/Users/hunter/Code/mymac/myscripts/network/setupwifi.sh"
-wifiRevertPath = "/Users/hunter/Code/mymac/myscripts/network/revert.sh"
+wifiSetupPath = "/Users/ufiv/Code/mymac/myscripts/network/setupwifi.sh"
+wifiRevertPath = "/Users/ufiv/Code/mymac/myscripts/network/revert.sh"
 
 function ssidChangedCallback()
     newSSID = hs.wifi.currentNetwork()
@@ -36,14 +38,15 @@ function ssidChangedCallback()
         return
     end
     if not itemInList(lastSSID,homeSSID) then
+        print("上次连接非家里网络")
         if itemInList(newSSID, homeSSID) then 
-            hs.alert.show("设置WIFI")
             os.execute(wifiSetupPath)
+            hs.notify.new({title="连接家里WIFI", informativeText="网关IP已设置"}):send()
         end
     else
         if not itemInList(newSSID, homeSSID) then
             hs.audiodevice.defaultOutputDevice():setVolume(0)
-            hs.alert.show("已静音")
+            hs.notify.new({title="连接WIFI", informativeText="已静音"}):send()
             output = os.execute(wifiRevertPath)
         end       
     end 
@@ -186,30 +189,46 @@ hs.hotkey.bind({"cmd", "ctrl"}, "Pageup", function()
 -- 设置鼠标贴边自动扩展
 function isclose(x,y)
     local threshold = 150
+    if y> 1500 then
+        threshold = 10
+    end
+    
     return math.abs(x - y) < threshold
     -- body
 end
+
+function isMouseOnBar(f,mousepos)
+    local threshold = 50
+    local x = mousepos.x
+    local y = mousepos.y
+    local b = (f.x + f.w*0.05 < x and f.x+f.w>x) and (f.y - 27 < y  and f.y + threshold > y)
+    return b
+end
+
 function resize()
     local butt = hs.mouse:getButtons()
     if butt[1] then 
         local win = hs.window.focusedWindow()
+        if win == nil then
+            return
+        end
         local f = win:frame()
         local screen = win:screen()
         local max = screen:frame()
         local abspos = hs.mouse.absolutePosition()
-        if isclose(abspos.x , 0) and isclose(abspos.y , 0) then
+        if isclose(abspos.x , 0) and isclose(abspos.y , 0) and isMouseOnBar(f,abspos) then
             f.x = max.x
             f.y = max.y
             f.w = max.w /2
             f.h = max.h /2
             win:setFrame(f)
-        elseif isclose(abspos.x , 0) and isclose(abspos.y , max.h) then
+        elseif isclose(abspos.x , 0) and isclose(abspos.y , max.h) and isMouseOnBar(f,abspos) then
             f.x = max.x
             f.y = max.h /2
             f.w = max.w /2
             f.h = max.h /2
             win:setFrame(f)
-        elseif isclose(abspos.x , 0)  then
+        elseif isclose(abspos.x , 0) and isMouseOnBar(f,abspos)  then
             
             f.x = max.x
             f.y = max.y
@@ -217,19 +236,19 @@ function resize()
             f.h = max.h
             win:setFrame(f)
         
-        elseif isclose(abspos.x , max.w) and isclose(abspos.y , 0) then
+        elseif isclose(abspos.x , max.w) and isclose(abspos.y , 0) and isMouseOnBar(f,abspos) then
             f.x = max.w /2
             f.y = max.y
             f.w = max.w /2
             f.h = max.h /2
             win:setFrame(f)
-        elseif isclose(abspos.x , max.w) and isclose(abspos.y , max.h) then
+        elseif isclose(abspos.x , max.w) and isclose(abspos.y , max.h) and isMouseOnBar(f,abspos) then
             f.x = max.w /2
             f.y = max.h /2
             f.w = max.w /2
             f.h = max.h /2
             win:setFrame(f)
-        elseif isclose(abspos.x , max.w) and abspos.y ~= max.h then 
+        elseif isclose(abspos.x , max.w) and abspos.y ~= max.h and isMouseOnBar(f,abspos) then 
             f.x = max.w /2
             f.y = max.y
             f.w = max.w /2
