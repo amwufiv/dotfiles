@@ -94,7 +94,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ssus="ssh root@108.61.23.99"
 alias ssjp="ssh root@167.179.84.35"
+alias ssla="ssh root@104.128.94.92 -p 26968"
 alias sshpi="ssh root@192.168.3.2"
+alias sshgl="ssh root@192.168.8.1"
+alias azjp="ssh ubuntu@jp.ufiv.org"
+alias sshjs="ssh ubuntu@119.28.251.126"
 alias apm="ssh -p 59187 user_dev@42.123.76.27"
 alias pip=pip3
 # switch GPU
@@ -117,8 +121,15 @@ alias tin="tmux a -t"
 alias tls="tmux ls"
 
 # miscellaneous
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 alias cp="cp -i"
-
-######################java
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+alias rm='echo "This is not the command you are looking for."; false'
+alias del="trash"
+alias path="pwd | pbcopy"
+alias python="python2"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+export PATH=$PATH:/Users/ufiv/.spicetify
