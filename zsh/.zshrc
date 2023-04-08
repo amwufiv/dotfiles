@@ -99,6 +99,7 @@ alias sshpi="ssh root@192.168.3.2"
 alias sshgl="ssh root@192.168.8.1"
 alias azjp="ssh ubuntu@jp.ufiv.org"
 alias sshjs="ssh ubuntu@119.28.251.126"
+alias sshnat="ssh root@xz-ct1.cloudiplc.com -p 18821"
 alias apm="ssh -p 59187 user_dev@42.123.76.27"
 alias pip=pip3
 # switch GPU
@@ -128,8 +129,9 @@ alias cp="cp -i"
 alias rm='echo "This is not the command you are looking for."; false'
 alias del="trash"
 alias path="pwd | pbcopy"
-alias python="python2"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 export PATH=$PATH:/Users/ufiv/.spicetify
+
+eval "$(starship init zsh)"

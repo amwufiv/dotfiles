@@ -1,0 +1,5 @@
+require('ufiv.base')
+require('ufiv.neovide')
+require('ufiv.plugins')
+require('ufiv.keymaps')
+require('ufiv.filetype')

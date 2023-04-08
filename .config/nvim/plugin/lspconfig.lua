@@ -56,3 +56,16 @@ nvim_lsp.sumneko_lua.setup {
     },
   },
 }
+
+nvim_lsp.jsonls.setup{
+  capabilities = capabilities,
+  
+}
+
+nvim_lsp.marksman.setup {
+  capabilities = capabilities
+}
+
+nvim_lsp.texlab.setup {
+  capabilities = capabilities
+}

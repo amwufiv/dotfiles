@@ -1,6 +1,6 @@
 local status, cmp = pcall(require, "cmp")
 if (not status) then
-  return 
+  return
 end
 local lspkind = require 'lspkind'
 
@@ -13,17 +13,24 @@ cmp.setup({
   },
   sources = {
     {
+      name = 'nvim_lsp'
+    },
+    {
+      name = 'nvim_lsp_signature_help'
+    },
+    {
+      name = 'luasnip'
+    },
+    {
       name = 'buffer',
       option = {
         -- Options go into this table
       },
     },
-    { 
-      name = 'nvim_lsp' 
+    {
+      name = 'path'
     }
   },
-  
-  
 
   mapping = cmp.mapping.preset.insert({
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
