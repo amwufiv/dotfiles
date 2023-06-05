@@ -11,7 +11,7 @@ ts_config.setup{
   },
   playground = {
     enable = true,
-    disable = {},
+    disable = { "latex" },
     updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
     persist_queries = false, -- Whether the query persists across vim sessions
     keybindings = {
@@ -30,3 +30,8 @@ ts_config.setup{
 }
 
 -- require("vim.treesitter.query").set_query("python", "injections", "(string) @comment")
+
+-- set folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 99

@@ -13,7 +13,8 @@ telescope.setup {
     mappings = {
       n = {
         ["q"] = actions.close,
-        ['<c-D>'] = actions.delete_buffer
+        ['<c-D>'] = actions.delete_buffer,
+        [",q"] = actions.send_selected_to_qflist + actions.open_qflist,
       },
       i = {
         ['<c-D>'] = actions.delete_buffer
@@ -39,7 +40,7 @@ telescope.setup {
       auto_quoting = true,
       mappings = { -- extend mappings
         i = {
-          ["C-k>"] = lga_actions.quote_prompt(),
+          ["<C-k>"] = lga_actions.quote_prompt(),
           ["<C-g>"] = lga_actions.quote_prompt({ postfix = " -g " }),
         },
       },

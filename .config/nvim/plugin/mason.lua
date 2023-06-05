@@ -9,8 +9,9 @@ mason_lspconfig.setup{
     "jsonls",
     "marksman",
     "pyright",
-    "sumneko_lua",
+    "lua_ls",
     "texlab",
+    "gopls"
   },
   automatic_installation = true
 }

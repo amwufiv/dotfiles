@@ -1,4 +1,5 @@
 vim.wo.number = true -- show line number
+vim.wo.relativenumber = true
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 

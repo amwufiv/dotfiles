@@ -29,6 +29,10 @@ cmp.setup({
     },
     {
       name = 'path'
+    },
+    {
+      name = 'omni',
+      
     }
   },
 

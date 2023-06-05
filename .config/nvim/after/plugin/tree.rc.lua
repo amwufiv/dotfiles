@@ -7,8 +7,6 @@ end
 
 tree.setup{
   hijack_cursor = true,
-  open_on_setup = false,
-  open_on_setup_file = false,
   sync_root_with_cwd = true,
   respect_buf_cwd = true,
   update_focused_file = {
@@ -20,7 +18,7 @@ tree.setup{
     highlight_opened_files = "all"
   },
   filters = {
-    dotfiles = false,
+    dotfiles = true,
     custom = {},
     exclude = {".git"}
   }

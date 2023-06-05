@@ -1,4 +1,5 @@
 require('ufiv.base')
+require('ufiv.autocmd')
 require('ufiv.neovide')
 require('ufiv.plugins')
 require('ufiv.keymaps')
