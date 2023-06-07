@@ -92,19 +92,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ssus="ssh root@108.61.23.99"
-alias ssjp="ssh root@167.179.84.35"
-alias ssla="ssh root@104.128.94.92 -p 26968"
-alias sshpi="ssh root@192.168.3.2"
-alias sshgl="ssh root@192.168.8.1"
-alias azjp="ssh ubuntu@jp.ufiv.org"
-alias sshjs="ssh ubuntu@119.28.251.126"
-alias sshnat="ssh root@xz-ct1.cloudiplc.com -p 18821"
-alias apm="ssh -p 59187 user_dev@42.123.76.27"
-alias pip=pip3
-# switch GPU
-alias integrate="sudo pmset -a GPUSwitch 0"
-alias mix="sudo pmset -a GPUSwitch 2"
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 
 source ~/.bash_profile
