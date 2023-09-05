@@ -116,9 +116,20 @@ alias cp="cp -i"
 alias rm='echo "This is not the command you are looking for."; false'
 alias del="trash"
 alias path="pwd | pbcopy"
+alias cat="bat"
+alias pbsort="pbpaste|sort|uniq|pbcopy"
+
+
+
+
+
+
+
+
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 export PATH=$PATH:/Users/ufiv/.spicetify
 
 eval "$(starship init zsh)"
+eval "$(rbenv init - zsh)"
