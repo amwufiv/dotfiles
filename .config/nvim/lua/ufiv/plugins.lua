@@ -19,6 +19,7 @@ packer.startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
   use 'hrsh7th/cmp-nvim-lsp-signature-help'
   use 'hrsh7th/nvim-cmp' -- Completion
+  use 'hrsh7th/cmp-omni'
   use 'hrsh7th/cmp-path'
   use 'saadparwaiz1/cmp_luasnip'
 
@@ -40,7 +41,13 @@ packer.startup(function(use)
   use 'nvim-treesitter/playground'
   use 'kyazdani42/nvim-web-devicons' -- File icon
   use 'windwp/nvim-autopairs'
-  use "EdenEast/nightfox.nvim"
+
+  -- theme
+  -- use "EdenEast/nightfox.nvim"
+  use "rebelot/kanagawa.nvim"
+  use "olimorris/onedarkpro.nvim"
+
+
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
@@ -74,6 +81,18 @@ packer.startup(function(use)
   use "mfussenegger/nvim-dap"
   use "rcarriga/nvim-dap-ui"
   use "mfussenegger/nvim-dap-python"
+  use "chentoast/marks.nvim"
+  use "lervag/vimtex"
+
+  -- remote
+  use {
+    'chipsenkbeil/distant.nvim',
+    branch = 'v0.2',
+  }
+
+  -- use "Exafunction/codeium.vim"
+  -- github copilot
+  use 'github/copilot.vim'
 end)
 
 

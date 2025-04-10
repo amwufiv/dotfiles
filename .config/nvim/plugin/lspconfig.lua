@@ -1,3 +1,19 @@
+-- mason setup
+local mason_status, mason = pcall(require, "mason")
+if (mason_status) 
+then
+  mason.setup()
+  local mason_lsp_status, mason_lsp = pcall(require, "mason_lspconfig")
+  if(mason_lsp_status)
+  then 
+    lspconfig.setup {
+        automatic_installation = true
+    }
+  end
+end
+
+
+
 local status, nvim_lsp = pcall(require, "lspconfig")
 if (not status) then 
   print("lspconfig is not installed")
@@ -80,8 +96,6 @@ nvim_lsp.jsonls.setup{
 nvim_lsp.marksman.setup {
   capabilities = capabilities
 }
-
-nvim_lsp.gopls.setup{}
 
 -- https://github.com/latex-lsp/texlab/wiki/Configuration
 -- nvim_lsp.texlab.setup {

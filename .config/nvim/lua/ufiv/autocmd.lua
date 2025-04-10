@@ -1,6 +1,6 @@
 local api = vim.api
 
--- Highlight on yank
+-- group 非必需
 local winGroup = api.nvim_create_augroup("winGroup", { clear = false })
 api.nvim_create_autocmd("WinNew", {
   pattern = "*",

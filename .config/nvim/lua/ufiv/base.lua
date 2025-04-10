@@ -6,6 +6,8 @@ vim.opt.fileencoding = 'utf-8'
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.g.netrw_browser_viewer = 'open'
+vim.g.netrw_http_cmd = 'open'
 vim.opt.termguicolors = true
 vim.opt.title = true
 vim.opt.autoindent = true
@@ -19,6 +21,7 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.list = true
 vim.opt.listchars:append "space:⋅"
-vim.opt.listchars:append "eol:"-- ↵ ↴    
+vim.opt.listchars:append "eol:↩"--  ↵ ↴
 vim.opt.clipboard = "unnamedplus"
-vim.opt.scrolloff=999
+-- vim.opt.scrolloff=999
+

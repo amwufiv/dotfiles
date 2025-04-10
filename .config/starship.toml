@@ -1,0 +1,24 @@
+[character]
+error_symbol = "[✖](bold red) "
+
+[directory]
+truncation_length = 5
+format = "[$path]($style)[$lock_symbol]($lock_style) "
+
+[git_branch]
+style = "bold yellow"
+
+[git_status]
+conflicted = "⚔️"
+ahead = "⇡"
+behind = "⇣"
+diverged = '⇕'
+untracked = "?"
+stashed = "$"
+modified = "!"
+renamed = "»"
+deleted = "✘"
+style = "bright-white"
+
+[battery]
+disabled = true

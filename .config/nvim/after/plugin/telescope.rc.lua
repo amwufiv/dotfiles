@@ -13,11 +13,24 @@ telescope.setup {
     mappings = {
       n = {
         ["q"] = actions.close,
-        ['<c-D>'] = actions.delete_buffer,
         [",q"] = actions.send_selected_to_qflist + actions.open_qflist,
       },
       i = {
-        ['<c-D>'] = actions.delete_buffer
+        -- ['<c-D>'] = actions.delete_buffer
+      }
+    }
+  },
+  pickers = {
+    buffers = {
+      show_all_buffers = true,
+      sort_mru = true,
+      mappings = {
+        i = {
+          ['<c-D>'] = "delete_buffer",
+        },
+        n = {
+          ['<c-D>'] = "delete_buffer",
+        }
       }
     }
   },

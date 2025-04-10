@@ -60,7 +60,7 @@ BULLETTRAIN_STATUS_EXIT_SHOW=true
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump osx mvn zsh-syntax-highlighting)
+plugins=(git autojump macos mvn zsh-syntax-highlighting gradle)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,7 +105,7 @@ hash -d hunter=~
 # tmux config
 alias tnew="tmux new -s"
 alias tkill="tmux kill-session -t"
-alias tin="tmux a -t"
+alias tin="tmux a -t $1||tmux new -s $1"
 alias tls="tmux ls"
 
 # miscellaneous
@@ -118,18 +118,28 @@ alias del="trash"
 alias path="pwd | pbcopy"
 alias cat="bat"
 alias pbsort="pbpaste|sort|uniq|pbcopy"
+alias vim="nvim"
+alias exp='gh copilot explain'
+alias sug='gh copilot suggest'
 
 
 
 
 
 
-
-
+# python 版本管理
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 export PATH=$PATH:/Users/ufiv/.spicetify
 
+# java 版本管理
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
 eval "$(starship init zsh)"
 eval "$(rbenv init - zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

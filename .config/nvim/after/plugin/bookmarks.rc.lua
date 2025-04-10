@@ -6,13 +6,13 @@ end
 
 bm.setup{
   keymap = {
-		toggle = "<leader>bbt", -- Toggle bookmarks
-		add = "<leader>bba", -- Add bookmarks
+		toggle = "<leader>dt", -- Toggle bookmarks
+		add = "<leader>da", -- Add bookmarks
 		jump = "<CR>", -- Jump from bookmarks
-		delete = "<leader>bbd", -- Delete bookmarks
-		order = "<leader>bbo", -- Order bookmarks by frequency or updated_time
+		delete = "<leader>dd", -- Delete bookmarks
+		order = "<leader>do", -- Order bookmarks by frequency or updated_time
 		delete_on_virt = "\\dd", -- Delete bookmark at virt text line
-        show_desc = "<leader>bbs", -- show bookmark desc
+        show_desc = "<leader>ds", -- show bookmark desc
 	},
     width = 0.8, -- Bookmarks window width:  (0, 1]
     height = 0.6, -- Bookmarks window height: (0, 1]

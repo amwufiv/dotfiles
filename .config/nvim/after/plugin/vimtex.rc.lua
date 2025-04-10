@@ -1,10 +1,14 @@
 -- vim.g.vimtex_syntax_enabled = 0
 -- vim.g.vimtex_syntax_conceal_disable = 1
 --
+--https://www.ejmastnak.com/tutorials/vim-latex/vimtex/
+vim.g.vimtex_format_enabled = 1
+vim.g.vimtex_format_on_save = 1
+vim.g.vimtex_format_program = 'latexindent'
 vim.g.vimtex_compiler_method = "latexmk"
 vim.g.vimtex_compiler_latexmk = {
     callback = 1,
-    continuous = 0,
+    continuous = 0, --不实时编译
     executable = "latexmk",
     options = {
         "-shell-escape",
@@ -14,7 +18,7 @@ vim.g.vimtex_compiler_latexmk = {
         "-interaction=nonstopmode",
     },
 }
-vim.g.vimtex_view_method="skim"
+vim.g.vimtex_view_method = "skim"
 -- Disable imaps (using Ultisnips)
 -- vim.g.vimtex_imaps_enabled = 0
 -- -- Do not open pdfviwer on compile
