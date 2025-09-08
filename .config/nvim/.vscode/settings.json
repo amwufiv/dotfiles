@@ -1,0 +1,10 @@
+{
+    "Lua.runtime.version": "LuaJIT", // nvim 使用 LuaJIT
+    "Lua.workspace.library": {
+        "/opt/homebrew/Cellar/neovim/0.11.4/share/nvim/runtime/lua": true // nvim 的 Lua 库路径（Linux 示例，根据您的系统调整）
+    },
+    "Lua.diagnostics.globals": [
+        "vim"
+    ], // 识别全局 vim 对象
+    "Lua.workspace.checkThirdParty": false // 避免不必要的检查
+}

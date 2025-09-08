@@ -122,16 +122,12 @@ alias vim="nvim"
 alias exp='gh copilot explain'
 alias sug='gh copilot suggest'
 
+# ai
 
 
 
 
 
-# python 版本管理
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-export PATH=$PATH:/Users/ufiv/.spicetify
 
 # java 版本管理
 export PATH="$HOME/.jenv/bin:$PATH"

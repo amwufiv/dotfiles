@@ -1,6 +1,8 @@
-require('ufiv.base')
-require('ufiv.autocmd')
-require('ufiv.neovide')
-require('ufiv.plugins')
-require('ufiv.keymaps')
-require('ufiv.filetype')
+-- Neovim Configuration Entry Point
+-- Clean, modular architecture with zero special cases
+
+-- Load core configuration (no plugin dependencies)
+require("core")
+
+-- Load plugin system and configurations
+require('config.lazy')

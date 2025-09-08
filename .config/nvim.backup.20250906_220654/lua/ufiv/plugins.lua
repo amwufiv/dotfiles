@@ -19,6 +19,7 @@ packer.startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
   use 'hrsh7th/cmp-nvim-lsp-signature-help'
   use 'hrsh7th/nvim-cmp' -- Completion
+  use 'hrsh7th/cmp-omni'
   use 'hrsh7th/cmp-path'
   use 'saadparwaiz1/cmp_luasnip'
 
@@ -89,7 +90,9 @@ packer.startup(function(use)
     branch = 'v0.2',
   }
 
-  use "Exafunction/codeium.vim"
+  -- use "Exafunction/codeium.vim"
+  -- github copilot
+  use 'github/copilot.vim'
 end)
 
 
